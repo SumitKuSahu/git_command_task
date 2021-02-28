@@ -1,0 +1,115 @@
+CREATE
+-----------------------------------------------------------------------
+From existing data,
+git init creates new repository in current directory
+git add . add all latest changes to the next commit
+-------------------------------------------------------------------------
+From existing repo
+git clone is used to clone a repositroy from a remote server
+-------------------------------------------------------------------------
+Remote repository for existing local data
+mkdir repo.git && cd repo.git
+git init --bare[--shared=group]
+-------------------------------------------------------------------------
+
+UPDATE
+-------------------------------------------------------------------------
+Fetch latest changes from origin
+git fetch (this does not merge them)
+-------------------------------------------------------------------------
+Pull latest changes from origin
+git pull (does a fetch followed by a merge)
+-------------------------------------------------------------------------
+Apply a patch that someone sent you
+git am -3 patch.mbox (In case of conflict, resolve the conflict and)
+git am --resolve
+-------------------------------------------------------------------------
+
+PUBLISH
+-------------------------------------------------------------------------
+Commit all local changes
+git commit -a
+-------------------------------------------------------------------------
+Commit previously staged changes
+git commit -m "descriptive message"
+-------------------------------------------------------------------------
+Prepare a patch for other developers
+git format-patch origin
+-------------------------------------------------------------------------
+Push changes to origin
+git push [origin][branch]
+-------------------------------------------------------------------------
+Make a version or a milestone
+git tag <version_name>
+-------------------------------------------------------------------------
+
+BRANCH
+-------------------------------------------------------------------------
+Switch to the BRANCH branch
+git checkout <BRANCH>
+-------------------------------------------------------------------------
+Merge branch B1 into branch B2
+git checkout <B2>
+git merge <B1>
+-------------------------------------------------------------------------
+Create branch based on HEAD
+git branch <BRANCH>
+-------------------------------------------------------------------------
+Create branch based on another
+git checkout <new><base>
+-------------------------------------------------------------------------
+Delete a branch
+git branch -d <branch>
+-------------------------------------------------------------------------
+
+REVERT
+-------------------------------------------------------------------------
+Return to the last committed state
+git checkout -f | git reset --hard (you cannot undo a hard reset)
+-------------------------------------------------------------------------
+Revert the last commit
+git revert HEAD (Creates a new commit)
+-------------------------------------------------------------------------
+Revert specific commit
+git revert $id (Creates a new commit)
+-------------------------------------------------------------------------
+Fix the last commit
+git commit -a --amend (after editing the broken files)
+-------------------------------------------------------------------------
+Checkout the ID version of a file
+git checkout <ID><file>
+-------------------------------------------------------------------------
+
+SHOW
+-------------------------------------------------------------------------
+Files changed in working directory
+git status
+-------------------------------------------------------------------------
+Changes to tracked files
+git diff
+-------------------------------------------------------------------------
+Changes between ID1 and ID2
+git diff <ID1><ID2>
+-------------------------------------------------------------------------
+History of changes
+git log
+-------------------------------------------------------------------------
+History of changes with files changed
+git whatchanged
+-------------------------------------------------------------------------
+Who changed what and when in a file
+git blame <file>
+-------------------------------------------------------------------------
+A commit identifies by ID
+git show <ID>
+-------------------------------------------------------------------------
+A specific file from a specific ID
+git diff <ID>:<file>
+-------------------------------------------------------------------------
+All local branches
+git branch (star "*" marks the current branch)
+-------------------------------------------------------------------------
+Search for patterns
+git grep<pattern>[path]
+-------------------------------------------------------------------------
+
